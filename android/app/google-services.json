@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "569655433976",
+    "project_id": "ecommerce-app-bc5bf",
+    "storage_bucket": "ecommerce-app-bc5bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569655433976:android:7edc4171a9b71f0f51f90d",
+        "android_client_info": {
+          "package_name": "com.example.bazar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUxjMfXs0qfDrcJaI6HVe2NP43zZxSF7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
