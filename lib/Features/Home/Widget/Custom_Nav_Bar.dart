@@ -7,7 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Custom_Nav_Bar extends StatefulWidget {
-  Custom_Nav_Bar({super.key});
+  const Custom_Nav_Bar({super.key});
 
   @override
   State<Custom_Nav_Bar> createState() => _Custom_Nav_BarState();

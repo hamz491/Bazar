@@ -34,7 +34,7 @@ class Cart_View extends StatelessWidget {
             GoRouter.of(context).pop();
           },
         ),
-        title: Text('My Cart'),
+        title: const Text('My Cart'),
         centerTitle: true,
         actions: [
           Padding(

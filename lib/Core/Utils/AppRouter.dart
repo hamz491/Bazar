@@ -29,7 +29,7 @@ import 'package:bazar/Features/Splash_Screen/Widgets/Splash_Body.dart';
 import 'package:go_router/go_router.dart';
 
 const kSplash_body = "/splashbody";
-const String khomeview = "/homeView";
+const khomeview = "/homeView";
 const khomeview_body = "/homeViewbody";
 const kfirestview = "/firstview";
 const customindicator = "/customindicator";
@@ -109,7 +109,7 @@ abstract class appRouter {
       ),
       GoRoute(
         path: Cart_View_Body_rout,
-        builder: (context, state) => Cart_Tile(),
+        builder: (context, state) => const Cart_Tile(),
       ),
       GoRoute(
         path: payment_view_rout,
@@ -230,7 +230,7 @@ abstract class appRouter {
       ),
       GoRoute(
         path: Cart_View_Body_rout,
-        builder: (context, state) => Cart_Tile(),
+        builder: (context, state) => const Cart_Tile(),
       ),
       GoRoute(
         path: payment_view_rout,

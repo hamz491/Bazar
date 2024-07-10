@@ -1,5 +1,3 @@
-import 'package:bazar/Core/Utils/Constants.dart';
-import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
 import 'package:bazar/Features/Home/Manager/cubit/store_fav_cubit.dart';
 import 'package:bazar/Features/Home/Widget/Product_Tile.dart';
 import 'package:flutter/material.dart';

@@ -2,7 +2,6 @@ import 'package:bazar/Core/Utils/AppRouter.dart';
 import 'package:bazar/Core/Widgets/Custom_Auth_Button.dart';
 import 'package:bazar/Features/Auth/Widgets/Custom_TextField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';

@@ -6,7 +6,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Scaffold(
         body: Custom_Nav_Bar(),

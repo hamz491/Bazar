@@ -5,7 +5,7 @@ import 'package:bazar/Features/Product/Widget/product_type.dart';
 import 'package:flutter/material.dart';
 
 class Product_Decription extends StatelessWidget {
-  Product_Decription({super.key});
+  const Product_Decription({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,15 +2,13 @@ class product_model {
   final int? id;
   final String? title;
   final String? description;
-  final int? price;
-  final double? discountPercentage;
+  final double? price;
   final String? brand;
   final String? category;
   final String? thumbnail;
   final List? images;
 
   product_model({
-    required this.discountPercentage,
     required this.brand,
     required this.thumbnail,
     required this.images,
@@ -28,7 +26,6 @@ class product_model {
         price: json['price'],
         description: json['description'],
         category: json['category'],
-        discountPercentage: json['discountPercentage'],
         brand: json['brand'],
         thumbnail: json['thumbnail'],
         images: json['images'],

@@ -3,5 +3,7 @@
         "addtocart",
         "Rfontfamily"
     ],
-    "cSpell.showAutocompleteSuggestions": true
+    "cSpell.showAutocompleteSuggestions": true,
+    "pieces.relatedMaterials.autoSaveRelatedMaterialSelection": true,
+    "pieces.autocomplete": true
 }

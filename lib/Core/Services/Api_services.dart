@@ -13,7 +13,9 @@ class Api_Services {
     }
 
     (kDebugMode) {
-      print("---products list---- $products");
+      if (kDebugMode) {
+        print("---products list---- $products");
+      }
     };
     return products;
   }

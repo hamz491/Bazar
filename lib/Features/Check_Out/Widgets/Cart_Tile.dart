@@ -2,6 +2,8 @@ import 'package:bazar/Features/Product/Widget/custom_counter.dart';
 import 'package:flutter/material.dart';
 
 class Cart_Tile extends StatelessWidget {
+  const Cart_Tile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(

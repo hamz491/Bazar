@@ -45,7 +45,7 @@ class Product_Details_Body extends StatelessWidget {
               ),
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Product_Decription(),
           ),

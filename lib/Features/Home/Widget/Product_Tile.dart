@@ -1,11 +1,9 @@
 import 'package:bazar/Core/Utils/AppRouter.dart';
-import 'package:bazar/Core/Utils/Constants.dart';
 import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
 import 'package:bazar/Features/Home/Manager/cubit/store_fav_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 class Product_Tile extends StatefulWidget {
   const Product_Tile({super.key, this.product});
