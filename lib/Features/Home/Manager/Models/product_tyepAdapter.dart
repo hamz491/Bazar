@@ -17,7 +17,7 @@ class product_typeAdapter extends TypeAdapter<product_model> {
   }
 
   @override
-  int get typeId => 1;
+  int get typeId => 2;
 
   @override
   void write(BinaryWriter writer, product_model obj) {

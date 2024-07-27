@@ -22,6 +22,7 @@ class Home_Builder extends StatelessWidget {
             itemBuilder: (context, index) {
               return Product_Tile(
                 product: state.products[index],
+                index: index,
               );
             },
           );

@@ -20,7 +20,8 @@ void main() async {
   );
   await Hive.initFlutter();
   Hive.registerAdapter(product_typeAdapter());
-  await Hive.openBox<product_model>(kProductsBox);
+  await Hive.openBox(kProductsBox);
+  await Hive.openBox(kfavbox);
   runApp(const Bazar());
 }
 

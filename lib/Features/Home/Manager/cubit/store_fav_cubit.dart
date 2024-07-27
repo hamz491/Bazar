@@ -8,28 +8,28 @@ part 'store_fav_state.dart';
 class StoreFavCubit extends Cubit<StoreFavState> {
   StoreFavCubit() : super(StoreFavInitial());
   bool isLoading = true;
-  List favProducts = [];
-  addFave(product_model product) async {
+  var x = Hive.box(kProductsBox);
+  addFave({required product_model product, required int index}) async {
     emit(StoreFavLoading());
     try {
       isLoading = false;
-      favProducts.clear();
-      var x = Hive.box<product_model>(kProductsBox);
-      await x.add(product);
-      debugPrint("Add Item");
-      favProducts = x.values.toList();
+      if (!x.containsKey(index)) {
+        await x.put(index, product);
+      }
+      debugPrint("add Fav -------->>> ${x.get(index)}");
     } catch (e) {
       isLoading = false;
       emit(StoreFavFailure(ErrMessage: e.toString()));
     }
   }
 
-  delFave(product_model product) async {
+  delFave({required product_model product, required int index}) async {
     emit(StoreFavLoading());
     try {
       isLoading = false;
-      var x = Hive.box<product_model>(kProductsBox);
-      await x.delete(product);
+      if (x.containsKey(index)) {
+        await x.delete(index);
+      }
       debugPrint("Delete Item");
     } catch (e) {
       isLoading = false;
