@@ -1,12 +1,27 @@
 import 'package:bazar/Core/Utils/AppRouter.dart';
+import 'package:bazar/Core/Utils/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-class custom_price_bottomsheet extends StatelessWidget {
+class custom_price_bottomsheet extends StatefulWidget {
   const custom_price_bottomsheet({super.key});
 
   @override
+  State<custom_price_bottomsheet> createState() =>
+      _custom_price_bottomsheetState();
+}
+
+class _custom_price_bottomsheetState extends State<custom_price_bottomsheet> {
+  @override
   Widget build(BuildContext context) {
+    List x = Hive.box(kCartBox).values.toList();
+    double total = 0;
+    for (var i in x) {
+      setState(() {
+        total += i.price!;
+      });
+    }
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
@@ -15,19 +30,19 @@ class custom_price_bottomsheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Row(
+          Row(
             children: [
-              Text(
+              const Text(
                 "Subtotal",
                 style: TextStyle(
                   fontSize: 25,
                   color: Colors.grey,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
-                "93.00 \$",
-                style: TextStyle(
+                "${total.toStringAsFixed(2)} \$",
+                style: const TextStyle(
                   fontSize: 25,
                 ),
               ),
@@ -60,19 +75,19 @@ class custom_price_bottomsheet extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
-          const Row(
+          Row(
             children: [
-              Text(
+              const Text(
                 "Total amount",
                 style: TextStyle(
                   fontSize: 25,
                   color: Colors.grey,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
-                "99.00 \$",
-                style: TextStyle(
+                "${(total + 6).toStringAsFixed(2)} \$",
+                style: const TextStyle(
                   fontSize: 25,
                 ),
               ),

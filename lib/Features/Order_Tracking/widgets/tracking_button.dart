@@ -15,7 +15,7 @@ class tracking_button extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: Colors.deepPurple,
+          color: Colors.deepPurple[400],
         ),
         child: const Center(
           child: Text(

@@ -1,10 +1,9 @@
-import 'package:bazar/Core/Utils/AppRouter.dart';
 import 'package:bazar/Core/Utils/Constants.dart';
 import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
-import 'package:bazar/Features/Home/Manager/cubit/store_fav_cubit.dart';
+import 'package:bazar/Features/Home/Manager/fav_cubit/store_fav_cubit.dart';
+import 'package:bazar/Features/Product/View/Product_Details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class Product_Tile extends StatefulWidget {
@@ -41,7 +40,11 @@ class _Product_TileState extends State<Product_Tile> {
       builder: (context, state) {
         return GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(product_details_rout);
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Product_Details(product: widget.product),
+              ),
+            );
           },
           child: Padding(
             padding: const EdgeInsets.all(8),
@@ -57,9 +60,9 @@ class _Product_TileState extends State<Product_Tile> {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: NetworkImage(widget.product!.thumbnail!),
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         ),
-                        color: Colors.pink[100],
+                        color: Colors.deepPurple[300],
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),

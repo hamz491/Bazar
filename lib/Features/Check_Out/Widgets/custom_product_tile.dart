@@ -1,8 +1,9 @@
+import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class custom_product_tile extends StatelessWidget {
-  const custom_product_tile({super.key});
-
+  const custom_product_tile({super.key, this.product});
+  final product_model? product;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,26 +15,26 @@ class custom_product_tile extends StatelessWidget {
             width: 60,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("Assets/images/19.jpg"),
+                image: NetworkImage("${product!.thumbnail}"),
               ),
             ),
           ),
           const SizedBox(width: 10),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Bix Bag Limitid edition",
-                style: TextStyle(
+                "${product!.title}",
+                style: const TextStyle(
                   fontSize: 15,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
-                "67.00 \$",
-                style: TextStyle(
+                "${product!.price} \$",
+                style: const TextStyle(
                   fontSize: 17,
                 ),
               ),

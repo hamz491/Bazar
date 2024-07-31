@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
 
 class product_type extends StatelessWidget {
-  const product_type({super.key});
-
+  const product_type({
+    super.key,
+    this.brand,
+    this.category,
+  });
+  final String? brand;
+  final String? category;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: Container(
-            height: 35,
+            height: 50,
             decoration: BoxDecoration(
               color: Colors.grey.shade300,
               borderRadius: BorderRadius.circular(15),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
-                'Brand: Apple',
-                style: TextStyle(
+                'Brand: $brand',
+                style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ),
@@ -28,17 +34,18 @@ class product_type extends StatelessWidget {
         const SizedBox(width: 10),
         Expanded(
           child: Container(
-            height: 35,
+            height: 50,
             decoration: BoxDecoration(
               color: Colors.grey.shade300,
               borderRadius: BorderRadius.circular(15),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
-                'Category: Electric',
-                style: TextStyle(
+                'Category: $category',
+                style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ),

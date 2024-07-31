@@ -1,9 +1,16 @@
+import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
 import 'package:bazar/Features/Product/Widget/custom_counter.dart';
 import 'package:flutter/material.dart';
 
-class Cart_Tile extends StatelessWidget {
-  const Cart_Tile({super.key});
+class Cart_Tile extends StatefulWidget {
+  const Cart_Tile({super.key, this.product, this.ontap});
+  final product_model? product;
+  final void Function()? ontap;
+  @override
+  State<Cart_Tile> createState() => _Cart_TileState();
+}
 
+class _Cart_TileState extends State<Cart_Tile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,29 +25,21 @@ class Cart_Tile extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
-                      image: AssetImage("Assets/images/14.jpg"),
-                      fit: BoxFit.cover,
+                    image: DecorationImage(
+                      image: NetworkImage("${widget.product!.thumbnail}"),
+                      fit: BoxFit.fitHeight,
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      height: 40,
-                      width: 100,
-                      child: custom_counter(),
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: CircleAvatar(
-                      child: Icon(Icons.delete),
+                GestureDetector(
+                  onTap: widget.ontap,
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: CircleAvatar(
+                        child: Icon(Icons.delete),
+                      ),
                     ),
                   ),
                 )
@@ -48,20 +47,21 @@ class Cart_Tile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 7),
-          const Row(
+          Row(
             children: [
               Text(
-                "Box Headphone",
-                style: TextStyle(
-                  fontSize: 22,
+                "${widget.product!.title}",
+                style: const TextStyle(
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
-                "32.00 \$",
-                style: TextStyle(
-                  fontSize: 22,
+                "${widget.product!.price} \$",
+                style: const TextStyle(
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),

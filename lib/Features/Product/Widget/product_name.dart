@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class product_name extends StatefulWidget {
-  const product_name({super.key});
-
+  const product_name({super.key, this.title});
+  final String? title;
   @override
   State<product_name> createState() => _product_nameState();
 }
@@ -14,18 +14,18 @@ class _product_nameState extends State<product_name> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Bix Bag Limited Edition 229',
-              style: TextStyle(
+              '${widget.title}',
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
-            Row(
+            const SizedBox(height: 8),
+            const Row(
               children: [
                 Icon(
                   Icons.star,
@@ -46,32 +46,6 @@ class _product_nameState extends State<product_name> {
             ),
           ],
         ),
-        const Spacer(),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              if (x == false) {
-                x = true;
-              } else {
-                x = false;
-              }
-            });
-          },
-          child: CircleAvatar(
-            maxRadius: 20,
-            backgroundColor: Colors.grey.withOpacity(.3),
-            child: x == false
-                ? const Icon(
-                    Icons.favorite_outline,
-                    size: 30,
-                  )
-                : const Icon(
-                    Icons.favorite,
-                    size: 30,
-                    color: Colors.red,
-                  ),
-          ),
-        )
       ],
     );
   }

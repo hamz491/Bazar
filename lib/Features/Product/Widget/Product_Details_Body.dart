@@ -1,9 +1,10 @@
+import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
 import 'package:bazar/Features/Product/Widget/Product_Description.dart';
 import 'package:flutter/material.dart';
 
 class Product_Details_Body extends StatelessWidget {
-  const Product_Details_Body({super.key});
-
+  const Product_Details_Body({super.key, this.product});
+  final product_model? product;
   @override
   Widget build(BuildContext context) {
     final double Sheight = MediaQuery.of(context).size.height;
@@ -15,10 +16,10 @@ class Product_Details_Body extends StatelessWidget {
           Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * .45,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("Assets/images/10.jpg"),
+                image: NetworkImage("${product?.thumbnail}"),
               ),
             ),
           ),
@@ -45,9 +46,11 @@ class Product_Details_Body extends StatelessWidget {
               ),
             ),
           ),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
-            child: Product_Decription(),
+            child: Product_Decription(
+              product: product,
+            ),
           ),
         ],
       ),

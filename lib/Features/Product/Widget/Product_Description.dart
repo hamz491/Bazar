@@ -1,3 +1,4 @@
+import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
 import 'package:bazar/Features/Product/Widget/procut_count.dart';
 import 'package:bazar/Features/Product/Widget/product_name.dart';
 import 'package:bazar/Features/Product/Widget/product_price_add_to_cart.dart';
@@ -5,8 +6,8 @@ import 'package:bazar/Features/Product/Widget/product_type.dart';
 import 'package:flutter/material.dart';
 
 class Product_Decription extends StatelessWidget {
-  const Product_Decription({super.key});
-
+  const Product_Decription({super.key, this.product});
+  final product_model? product;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,29 +23,34 @@ class Product_Decription extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 20),
-              const product_name(),
+              product_name(
+                title: product?.title,
+              ),
               const SizedBox(height: 20),
               Text(
-                'Lorem Ipsum is simply dummy text of the printing and typisting industry. Lorem Ipsum has been the industry\'s standard',
+                '${product?.description}',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.grey.shade600,
                 ),
-                maxLines: 3,
+                maxLines: 4,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: 15),
-              const product_type(),
+              const SizedBox(height: 20),
+              product_type(
+                brand: product?.brand,
+                category: product?.category,
+              ),
               const Divider(
                 color: Colors.grey,
                 endIndent: 5,
                 indent: 5,
-                thickness: .7,
+                thickness: .8,
               ),
-              const SizedBox(height: 6),
-              const procut_count(),
               const SizedBox(height: 30),
-              const product_price_add_to_cart(),
+              product_price_add_to_cart(
+                product: product,
+              ),
             ],
           ),
         ),

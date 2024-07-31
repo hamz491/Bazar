@@ -12,8 +12,6 @@ class product_ckeckout_tile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: double.infinity,
-      // height: 200,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -44,14 +42,9 @@ class product_ckeckout_tile extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 10),
                       Text(
                         "Color: brown",
-                        style: TextStyle(fontSize: 14),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        "Qty: 1",
                         style: TextStyle(fontSize: 14),
                       ),
                     ],
@@ -74,18 +67,8 @@ class product_ckeckout_tile extends StatelessWidget {
                 )
               ],
             ),
-            const SizedBox(height: 15),
-            const Row(
-              children: [
-                Expanded(
-                  child: details_button(),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: tracking_button(),
-                ),
-              ],
-            ),
+            const SizedBox(height: 20),
+            const tracking_button(),
           ],
         ),
       ),

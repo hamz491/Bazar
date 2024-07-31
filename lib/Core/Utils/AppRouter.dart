@@ -8,6 +8,7 @@ import 'package:bazar/Features/Check_Out/View/Cart_Vew.dart';
 import 'package:bazar/Features/Check_Out/View/Payment_View.dart';
 import 'package:bazar/Features/Check_Out/View/add_new_card_view.dart';
 import 'package:bazar/Features/Check_Out/Widgets/Cart_Tile.dart';
+import 'package:bazar/Features/Check_Out/Widgets/Cart_View_Body.dart';
 import 'package:bazar/Features/Check_Out/Widgets/Payment_Body.dart';
 import 'package:bazar/Features/Check_Out/Widgets/add_new_card_body.dart';
 import 'package:bazar/Features/Check_Out/Widgets/address_body.dart';
@@ -57,6 +58,7 @@ const profile_view_rout = "/myprofileview";
 const profile_body_rout = "/myprofilebody";
 const edit_body_rout = "/editbody";
 const edit_view_rout = "/editview";
+const cart_page_rout = "/cartpage";
 
 abstract class appRouter {
   static final router_in = GoRouter(
@@ -174,6 +176,10 @@ abstract class appRouter {
       GoRoute(
         path: edit_view_rout,
         builder: (context, state) => const edit_view(),
+      ),
+      GoRoute(
+        path: cart_page_rout,
+        builder: (context, state) => const Cart_View_Body(),
       ),
     ],
   );

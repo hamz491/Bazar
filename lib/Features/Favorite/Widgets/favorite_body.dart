@@ -1,4 +1,4 @@
-import 'package:bazar/Features/Home/Manager/cubit/store_fav_cubit.dart';
+import 'package:bazar/Features/Home/Manager/fav_cubit/store_fav_cubit.dart';
 import 'package:bazar/Features/Home/Widget/Product_Tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

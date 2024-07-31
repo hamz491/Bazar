@@ -15,7 +15,7 @@ class Custom_AppBar extends StatelessWidget {
         Row(
           children: [
             CircleAvatar(
-              backgroundColor: Colors.pink[200],
+              backgroundColor: Colors.deepPurple[200],
               maxRadius: 35,
               child: SvgPicture.asset("Assets/Icons/face.svg"),
             ),
