@@ -1,5 +1,4 @@
 import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
-import 'package:bazar/Features/Product/Widget/procut_count.dart';
 import 'package:bazar/Features/Product/Widget/product_name.dart';
 import 'package:bazar/Features/Product/Widget/product_price_add_to_cart.dart';
 import 'package:bazar/Features/Product/Widget/product_type.dart';

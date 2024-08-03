@@ -1,5 +1,4 @@
 import 'package:bazar/Features/Order_Tracking/widgets/completed_tile.dart';
-import 'package:bazar/Features/Order_Tracking/widgets/details_button.dart';
 import 'package:bazar/Features/Order_Tracking/widgets/image_decoration.dart';
 import 'package:bazar/Features/Order_Tracking/widgets/on_progress_tile.dart';
 import 'package:bazar/Features/Order_Tracking/widgets/tracking_button.dart';

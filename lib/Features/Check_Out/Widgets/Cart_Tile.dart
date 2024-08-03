@@ -1,5 +1,4 @@
 import 'package:bazar/Features/Home/Manager/Models/product_model.dart';
-import 'package:bazar/Features/Product/Widget/custom_counter.dart';
 import 'package:flutter/material.dart';
 
 class Cart_Tile extends StatefulWidget {
