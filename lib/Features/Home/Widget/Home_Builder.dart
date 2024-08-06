@@ -21,6 +21,7 @@ class Home_Builder extends StatelessWidget {
             itemCount: state.products.length,
             itemBuilder: (context, index) {
               return Product_Tile(
+                isActive: true,
                 product: state.products[index],
                 index: index,
               );

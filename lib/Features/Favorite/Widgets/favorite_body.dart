@@ -23,6 +23,7 @@ class _favorite_bodyState extends State<favorite_body> {
       itemCount: mylist.length,
       itemBuilder: (context, index) {
         return Product_Tile(
+          isActive: false,
           product: mylist[index],
           index: 1,
         );

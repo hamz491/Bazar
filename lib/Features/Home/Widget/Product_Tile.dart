@@ -7,16 +7,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class Product_Tile extends StatefulWidget {
-  const Product_Tile({super.key, this.product, required this.index});
+  const Product_Tile({
+    super.key,
+    this.product,
+    required this.index,
+    required this.isActive,
+  });
   final product_model? product;
   final int index;
+  final bool isActive;
 
   @override
   State<Product_Tile> createState() => _Product_TileState();
 }
 
 class _Product_TileState extends State<Product_Tile> {
-  bool isActive = false;
   var box = Hive.box(kfavbox);
   @override
   void initState() {
@@ -66,41 +71,45 @@ class _Product_TileState extends State<Product_Tile> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        if (box.get(widget.index) == false) {
-                          box.put(widget.index, true);
-                          debugPrint("+++++++>>>>> ${box.get(widget.index)}");
-                          BlocProvider.of<StoreFavCubit>(context).addFave(
-                            product: widget.product!,
-                            index: widget.index,
-                          );
-                          debugPrint("Adding");
-                        } else if (box.get(widget.index) == true) {
-                          box.put(widget.index, false);
-                          debugPrint("+++++++>>>>> ${box.get(widget.index)}");
-                          BlocProvider.of<StoreFavCubit>(context).delFave(
-                            product: widget.product!,
-                            index: widget.index,
-                          );
-                          debugPrint("Deleting");
-                        }
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: box.get(widget.index)
-                            ? const Icon(
-                                Icons.favorite,
-                                size: 30,
-                                color: Colors.red,
-                              )
-                            : const Icon(
-                                Icons.favorite_border_outlined,
-                                size: 30,
-                                color: Colors.grey,
-                              ),
-                      ),
-                    ),
+                    widget.isActive
+                        ? GestureDetector(
+                            onTap: () {
+                              if (box.get(widget.index) == false) {
+                                box.put(widget.index, true);
+                                debugPrint(
+                                    "+++++++>>>>> ${box.get(widget.index)}");
+                                BlocProvider.of<StoreFavCubit>(context).addFave(
+                                  product: widget.product!,
+                                  index: widget.index,
+                                );
+                                debugPrint("Adding");
+                              } else if (box.get(widget.index) == true) {
+                                box.put(widget.index, false);
+                                debugPrint(
+                                    "+++++++>>>>> ${box.get(widget.index)}");
+                                BlocProvider.of<StoreFavCubit>(context).delFave(
+                                  product: widget.product!,
+                                  index: widget.index,
+                                );
+                                debugPrint("Deleting");
+                              }
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: box.get(widget.index)
+                                  ? const Icon(
+                                      Icons.favorite,
+                                      size: 30,
+                                      color: Colors.red,
+                                    )
+                                  : const Icon(
+                                      Icons.favorite_border_outlined,
+                                      size: 30,
+                                      color: Colors.grey,
+                                    ),
+                            ),
+                          )
+                        : const Text(""),
                   ],
                 ),
                 const SizedBox(height: 10),

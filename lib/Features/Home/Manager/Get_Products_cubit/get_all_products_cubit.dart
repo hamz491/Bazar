@@ -6,7 +6,7 @@ part 'get_all_products_state.dart';
 
 class GetAllProductsCubit extends Cubit<GetAllProductsState> {
   GetAllProductsCubit() : super(GetAllProductsInitial());
-
+  
   fechAllProducts() async {
     if (kDebugMode) {
       print("start");
